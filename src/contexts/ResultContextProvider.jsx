@@ -6,7 +6,7 @@ const baseUrl = "https://google-api31.p.rapidapi.com";
 export const ResultContextProvider = ({ children }) => {
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("Elon musk");
 
   const getResults = async (type, requestBody) => {
     setIsLoading(true);
