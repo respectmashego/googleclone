@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useResultContext } from "../contexts/ResultContextProvider";
 import { useLocation } from "react-router-dom";
 import { Loading } from "./Loading";
+import ReactPlayer from "react-player";
 
 export const Results = () => {
   const { results, isLoading, getResults, searchTerm } = useResultContext();
@@ -88,7 +89,7 @@ export const Results = () => {
           ))}
         </div>
       );
-  
+
     case "/news":
       return (
         <div className="flex flex-wrap justify-between space-y-6 sm:px-56 items-center">
@@ -101,21 +102,36 @@ export const Results = () => {
                   rel="noreferrer"
                   className="hover:underline"
                 >
-             
                   <p className="text-xl   dark:text-blue-300 text-blue-700">
                     {title}
                   </p>
-                  <div className="flex gap-4">
-                    <a href="" target="_blank" rel="noreferrer">{url}</a>
-                  </div>
                 </a>
+
+                <div className="flex gap-4">
+                  <a href="" target="_blank" rel="noreferrer">
+                    {url}
+                  </a>
+                </div>
               </div>
             );
           })}
         </div>
       );
     case "/videos":
-      return "SEARCH";
+      return (
+        <div className="flex flex-wrap">
+          {results?.result?.map(({ content }, index) => (
+            <div key={index} className="p-2">
+              <ReactPlayer
+                url={content}
+                controls
+                width="355px"
+                height="200px"
+              />
+            </div>
+          ))}
+        </div>
+      );
 
     default:
       return "ERROR";

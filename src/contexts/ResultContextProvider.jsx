@@ -6,11 +6,11 @@ const baseUrl = "https://google-api31.p.rapidapi.com";
 export const ResultContextProvider = ({ children }) => {
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("Elon Musk");
+  const [searchTerm, setSearchTerm] = useState("google");
 
   const getResults = async (type, requestBody) => {
     setIsLoading(true);
-
+    console.log("API KEY", import.meta.env);
     const response = await fetch(`${baseUrl}${type}`, {
       method: "POST",
       headers: {
