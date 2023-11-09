@@ -14,7 +14,7 @@ export const Search = () => {
   return (
     <div className="relative sm:ml-48 md:ml-72 sm:-mt-10 mt-3">
       <input
-        placeholder="search LightBrowse "
+        placeholder="search lightBrowse "
         onChange={(e) => setText(e.target.value)}
         type="text"
         value={text}
