@@ -7,7 +7,7 @@ export const Routess = () => {
     <div className="p-4">
       <Routes>
         <Route  index element={<Navigate from="/" to="/search" />} />
-        <Route path="/" element={<Results />} />
+        <Route path="/search" element={<Results />} />
         <Route path="/images" element={<Results />} />
         <Route path="/news" element={<Results />} />
         <Route path="/videos" element={<Results />} />
