@@ -61,7 +61,7 @@ export const Results = () => {
               <div key={index} className="md:w-2/5 w-full">
                 <a href={href} target="_blank" rel="noreferrer">
                   <p className="text-sm">
-                    {href.length > 30 ? href.substring(0, 30) : href}
+                    {href?.length > 30 ? href?.substring(0, 30) : href}
                   </p>
                   <p className="text-xl  hover:underline  dark:text-blue-300 text-blue-700">
                     {title}
